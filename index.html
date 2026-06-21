@@ -7,7 +7,7 @@
     <style>
         :root {
             --bg-color: #050505;
-            --panel-bg: rgba(10, 10, 10, 0.85);
+            --panel-bg: rgba(10, 10, 10, 0.9);
             --border-color: #222;
             --border-focus: #444;
             --text-main: #d1d1d1;
@@ -16,52 +16,73 @@
             --accent-alert: #ff3333;
         }
 
-        * { box-sizing: border-box; }
-
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: "Consolas", "Courier New", Courier, monospace;
+            font-family: "Courier New", Courier, monospace;
             margin: 0;
-            padding: 40px 20px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Единый стиль аватаров */
+        /* Единый стиль аватаров для всех */
         .avatar-uniform {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             border: 1px solid var(--border-color);
+            margin-right: 20px;
             object-fit: cover;
             filter: grayscale(100%) contrast(120%);
-            margin-right: 20px;
         }
 
-        .header-img { width: 100%; max-width: 450px; }
-        h1 { font-size: 3rem; letter-spacing: 12px; margin: 20px 0; color: #fff; text-transform: uppercase; }
-        .divider { width: 100px; height: 2px; background-color: #444; margin-bottom: 30px; }
-
-        .hierarchy-box { width: 100%; max-width: 600px; margin-bottom: 30px; }
-        
-        .system-card {
-            background-color: #0a0a0a;
+        .header-img {
+            width: 100%;
+            max-width: 450px;
             border: 1px solid var(--border-color);
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: 12px;
+            margin: 30px 0 10px 0;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .divider {
+            width: 100px;      
+            height: 2px;
+            background-color: var(--border-focus);
+            margin-bottom: 30px;
+        }
+        
+        .hierarchy-box {
+            width: 100%;
+            max-width: 600px;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .system-card {
+            background-color: #0f0f0f;
+            border: 1px solid #333;
             padding: 15px;
+            margin: 15px 0;
             display: flex;
             align-items: center;
             width: 100%;
-            margin-bottom: 15px;
+            box-sizing: border-box;
         }
 
-        /* Особый стиль для Майора */
-        .card-major { border-left: 4px solid #fff; }
+        /* Выделение для Майора */
+        .major-card { border-left: 5px solid #fff; }
 
-        .card-info { text-align: left; }
-        .rank-label { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; }
-        .rank-name { font-weight: bold; color: var(--text-bright); font-size: 1.1rem; }
-        .status-badge { font-size: 0.6rem; color: var(--text-muted); margin-top: 4px; }
+        .rank-label { font-size: 0.7rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+        .rank-name { font-weight: bold; color: #fff; display: flex; align-items: center; font-size: 1.1rem; }
 
         .content-block {
             max-width: 600px;
@@ -70,7 +91,10 @@
             padding: 30px;
             background: var(--panel-bg);
             width: 100%;
+            box-sizing: border-box;
+            margin-top: 20px;
         }
+
         .section-title {
             color: #fff;      
             font-weight: bold;
@@ -79,45 +103,55 @@
             border-bottom: 1px solid #333;
             padding-bottom: 10px;
             letter-spacing: 3px;
+            font-size: 1.2rem;
         }
-        .rule-box { margin-bottom: 25px; }
-        .rule-header { color: #fff; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 8px; display: flex; align-items: center; }
-        .rule-header::before { content: "» "; color: #666; margin-right: 5px; }
-        .rule-text { font-size: 0.85rem; line-height: 1.6; color: #999; text-align: justify; }
-        .highlight { color: #fff; }
 
-        .footer { margin-top: 60px; font-size: 0.7rem; color: #222; text-transform: uppercase; text-align: center; letter-spacing: 2px; }
+        .rule-box { margin-bottom: 25px; }
+        .rule-header { color: #fff; font-weight: bold; text-transform: uppercase; font-size: 1rem; margin-bottom: 8px; display: flex; align-items: center; }
+        .rule-header::before { content: "» "; color: var(--text-muted); margin-right: 5px; }
+        .rule-text { font-size: 0.85rem; line-height: 1.6; color: #999; text-align: justify; }
+        
+        .footer {
+            margin-top: 60px;
+            font-size: 0.7rem;
+            color: #222;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+        .highlight { color: #fff; }
     </style>
 </head>
 <body>
 
     <img src="emblem.png" alt="KERN SIGNAL" class="header-img">
+
     <h1>KERN</h1>
     <div class="divider"></div>
 
     <div class="hierarchy-box">
         <div class="system-card">
-            <img src="order.jpg" alt="ORDER" class="avatar-uniform">
+            <img src="order.jpg" alt="COMMANDER" class="avatar-uniform">
             <div class="card-info">
                 <div class="rank-label">Supreme Commander</div>
                 <div class="rank-name">OberKommandant</div>
             </div>
         </div>
         
-        <div class="system-card card-major">
-            <img src="cross.jpg" alt="MAJOR" class="avatar-uniform">
+        <div class="system-card major-card">
+            <img src="cross.jpg" alt="MAJOR PHOTO" class="avatar-uniform">
             <div class="card-info">
                 <div class="rank-label">System Moderator</div>
                 <div class="rank-name">Major der Sturmartillerie</div>
-                <div class="status-badge">ACTIVE DUTY // ENFORCER</div>
+                <div style="font-size: 0.6rem; color: #444; margin-top: 5px;">ACTIVE DUTY / ENFORCER</div>
             </div>
         </div>
 
         <div class="system-card">
             <img src="user1.jpg" alt="UNIT" class="avatar-uniform">
             <div class="card-info">
-                <div class="rank-name">Unit_01 // Soldat</div>
-                <div class="status-badge">ONLINE</div>
+                <div class="rank-label">Unit Specialist</div>
+                <div class="rank-name">PanzerSoldat</div>
             </div>
         </div>
     </div>

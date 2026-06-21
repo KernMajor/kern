@@ -29,7 +29,7 @@
             align-items: center;
         }
 
-        /* Единый стиль для всех аватаров (ИСПРАВЛЕНО) */
+        /* Единый стиль аватаров */
         .avatar-uniform {
             width: 70px;
             height: 70px;
@@ -39,6 +39,12 @@
             margin-right: 20px;
         }
 
+        .header-img { width: 100%; max-width: 450px; }
+        h1 { font-size: 3rem; letter-spacing: 12px; margin: 20px 0; color: #fff; text-transform: uppercase; }
+        .divider { width: 100px; height: 2px; background-color: #444; margin-bottom: 30px; }
+
+        .hierarchy-box { width: 100%; max-width: 600px; margin-bottom: 30px; }
+        
         .system-card {
             background-color: #0a0a0a;
             border: 1px solid var(--border-color);
@@ -46,28 +52,50 @@
             display: flex;
             align-items: center;
             width: 100%;
-            max-width: 600px;
             margin-bottom: 15px;
         }
 
+        /* Особый стиль для Майора */
+        .card-major { border-left: 4px solid #fff; }
+
         .card-info { text-align: left; }
         .rank-label { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; }
-        .rank-name { font-weight: bold; color: var(--text-bright); }
+        .rank-name { font-weight: bold; color: var(--text-bright); font-size: 1.1rem; }
         .status-badge { font-size: 0.6rem; color: var(--text-muted); margin-top: 4px; }
 
-        .divider { width: 80px; height: 2px; background-color: var(--border-focus); margin: 30px 0; }
-        .header-img { width: 100%; max-width: 450px; }
-        h1 { font-size: 3rem; letter-spacing: 12px; margin: 20px 0; color: #fff; }
+        .content-block {
+            max-width: 600px;
+            text-align: left;
+            border: 1px solid #1a1a1a;
+            padding: 30px;
+            background: var(--panel-bg);
+            width: 100%;
+        }
+        .section-title {
+            color: #fff;      
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            letter-spacing: 3px;
+        }
+        .rule-box { margin-bottom: 25px; }
+        .rule-header { color: #fff; font-weight: bold; text-transform: uppercase; font-size: 0.9rem; margin-bottom: 8px; display: flex; align-items: center; }
+        .rule-header::before { content: "» "; color: #666; margin-right: 5px; }
+        .rule-text { font-size: 0.85rem; line-height: 1.6; color: #999; text-align: justify; }
+        .highlight { color: #fff; }
+
+        .footer { margin-top: 60px; font-size: 0.7rem; color: #222; text-transform: uppercase; text-align: center; letter-spacing: 2px; }
     </style>
 </head>
 <body>
 
-    <img src="emblem.png" alt="KERN" class="header-img">
+    <img src="emblem.png" alt="KERN SIGNAL" class="header-img">
     <h1>KERN</h1>
     <div class="divider"></div>
 
-    <div class="hierarchy-box" style="width: 100%; max-width: 600px;">
-        
+    <div class="hierarchy-box">
         <div class="system-card">
             <img src="order.jpg" alt="ORDER" class="avatar-uniform">
             <div class="card-info">
@@ -76,7 +104,7 @@
             </div>
         </div>
         
-        <div class="system-card" style="border-left: 4px solid #fff;">
+        <div class="system-card card-major">
             <img src="cross.jpg" alt="MAJOR" class="avatar-uniform">
             <div class="card-info">
                 <div class="rank-label">System Moderator</div>
@@ -88,19 +116,43 @@
         <div class="system-card">
             <img src="user1.jpg" alt="UNIT" class="avatar-uniform">
             <div class="card-info">
-                <div class="rank-name">Unit_01</div>
+                <div class="rank-name">Unit_01 // Soldat</div>
                 <div class="status-badge">ONLINE</div>
             </div>
         </div>
+    </div>
 
-        <div class="system-card">
-            <img src="user2.jpg" alt="UNIT" class="avatar-uniform">
-            <div class="card-info">
-                <div class="rank-name">Unit_02</div>
-                <div class="status-badge">ONLINE</div>
-            </div>
+    <div class="content-block">
+        <div class="section-title">DAS GESETZ (УСТАВ)</div>
+        
+        <div class="rule-box">
+            <div class="rule-header">01. EINHEIT (АБСОЛЮТНОЕ ЕДИНСТВО)</div>
+            <div class="rule-text">Внутренняя структура <span class="highlight">KERN</span> строится на полном доверии между звеньями. Любая попытка внести раздор, лгать участнику или ставить личные интересы выше коллективных ведет к немедленной деактивации статуса. Мы не обсуждаем проблемы — мы их устраняем.</div>
         </div>
 
+        <div class="rule-box">
+            <div class="rule-header">02. SCHWEIGEPFLICHT (ОБЯЗАТЕЛЬСТВО МОЛЧАНИЯ)</div>
+            <div class="rule-text">Ваше участие в Системе — это информация с высшим уровнем допуска. Запрещено разглашение целей, методов и состава группировки посторонним лицам («лживым»). Тишина — это наш главный щит. Нарушение тишины приравнивается к прямому предательству.</div>
+        </div>
+
+        <div class="rule-box">
+            <div class="rule-header">03. SCHUTZSCHILD (КОЛЛЕКТИВНАЯ ЗАЩИТА)</div>
+            <div class="rule-text">Любое внешнее давление на участника расценивается как атака на всё Ядро. Система обеспечивает силовую, интеллектуальную и ресурсную поддержку в рамках установленных протоколов. Враг одного — цель для всех.</div>
+        </div>
+
+        <div class="rule-box">
+            <div class="rule-header">04. EVOLUTION (ПОСТОЯННЫЙ ПРОГРЕСС)</div>
+            <div class="rule-text">Стагнация недопустима. Каждый юнит обязан совершенствовать свои навыки в технической, программной или ресурсной базе. Тот, кто перестает приносить пользу и становится балластом, подлежит отсечению. Мы — инструмент развития, а не клуб для досуга.</div>
+        </div>
+
+        <div class="rule-box">
+            <div class="rule-header">05. AUTORITÄT (ИСПОЛНИТЕЛЬНАЯ ВЛАСТЬ)</div>
+            <div class="rule-text">Решения <span class="highlight">Major der Sturmartillerie</span> по оперативным вопросам и фильтрации состава являются окончательными. Исполнение протоколов обязательно для всех юнитов ниже ранга Major. Дисциплина — это то, что отличает нас от толпы.</div>
+        </div>
+    </div>
+
+    <div class="footer">
+        KERN-SYSTEM-V4 // PROTOCOL ACTIVE // [IDENTIFICATION REQUIRED]
     </div>
 
 </body>
